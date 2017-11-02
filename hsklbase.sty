@@ -1,0 +1,258 @@
+\RequirePackage[ngerman]{translator}
+\RequirePackage{etoolbox}
+
+\AtEndPreamble
+{
+  \@ifpackageloaded{babel}{}{\usepackage[ngerman]{babel}}
+  \usepackage[style=german]{csquotes}
+  \@ifpackageloaded{biblatex}
+  {
+    \setlength{\bibitemsep}{1em}  % Abstand zwischen den Literaturangaben
+    \setlength{\bibhang}{2em}     % Einzug nach jeweils erster Zeile
+    \DeclareRobustCommand*{\glspostdescription}{}  %Den Punkt am Ende jeder Beschreibung deaktivieren
+    \DefineBibliographyStrings{german}
+    {
+      backrefpage 	= \lowercase{siehe }\uppercase{S}\adddot,
+      backrefpages 	= \lowercase{siehe }\uppercase{S}\adddot,
+      seealso	= \lowercase{s.\,auch},
+    }
+  }{}
+  \addto\captionsngerman{
+    \renewcommand{\listtablename}{Tabellenverzeichnis}
+    \renewcommand{\listfigurename}{Abbildungsverzeichnis}
+    \renewcommand{\contentsname}{Inhalt} %Name des Inhaltsverzeichnissen ändern
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Darstellung von Formeln (Mathe): %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{siunitx}        % für m^2 unterm Bruch
+\RequirePackage{amsmath}        % Matheumgebung
+\RequirePackage{amssymb}        % Symbole
+\RequirePackage{cancel}         % Formeln durchstreichen
+
+%%  Service-Pakete, die das Leben einfacher machen  %%%%%%%%%%%%%%%%%%%
+\RequirePackage{eurosym}        % EuroSymbol
+\RequirePackage{url}            % Schönere URLs
+\RequirePackage{lipsum}         % Blindtext, zum Testen
+\RequirePackage{xspace}         % intelligente Leerzeichen
+\RequirePackage{nameref}        % Mehr Arten der Referenzierung
+\RequirePackage{ragged2e}       % Blocksatz ausschalten (z.B. in Tabellen)
+\RequirePackage{expdlist}       % Erweiterte discription-Umgebung
+\RequirePackage{paralist}       % Schönere Listen
+\RequirePackage{tocloft}        % Schönere tocs
+\RequirePackage{calc}           % Interne Berechnungen
+\setdefaultitem{\raise0.3ex\hbox{\tiny\(\blacksquare\)}}
+               {\raise0.3ex\hbox{\tiny\(\blacksquare\)}}
+  						 {\raise0.3ex\hbox{\tiny\(\blacksquare\)}}
+               {\raise0.3ex\hbox{\tiny\(\blacksquare\)}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Arbsatzeinstellungen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Zeilenabstand
+\RequirePackage{setspace} % Zeilenabstände verändern
+\let\@oldlinespread\linespread
+\def\linespreadfactor{1.0}
+\newcommand{\extravspace}{\vspace{\linespreadfactor ex}}
+\newlength{\linespreadex}
+\setlength{\linespreadex}{-.5ex}
+\@ifclassloaded{hsklarticle}{}
+{
+  \renewcommand*\chapterheadstartvskip{\vspace*{\linespreadex}} % Abstand zwischen Kopfzeile und Überschrift verkleinern, gegebenenfalls den Faktor unten in \setlength{\linespreadex}{-0.5ex ...} ändern, den Rest der Formel sollte man besser so belassen.
+}
+\renewcommand{\linespread}[1]
+{
+  \edef\linespreadfactor{#1}
+  \@oldlinespread{#1}
+  \setlength{\linespreadex}{-0.5ex * \real{#1}}
+}
+\linespread{1.2}
+\KOMAoption{parskip}{half*}
+
+% Schaltet auf eine großzügige Formatierungsweise um
+% Der Schalter \sloppy sollte wenig verwendet werden. Schon gar nicht global in der Präambel.
+% Aber wenn man in einzelnen Absätzen Probleme mit dem Umbruch hat und weniger nachdenken will, na dann
+% \sloppy % Global schlampige Absätze  sloppypar Umgebung für einen Absatz
+
+% Schaltet den zusätzlichen Zwischenraum ab, den LaTeX normalerweise nach einem Satzzeichen einfügt.
+\frenchspacing
+
+\RequirePackage{lmodern}     % Neuere Schriftart, besser für Umlaute
+\RequirePackage{microtype}   % mikrotypographischen Erweiterungen von pdfTeX
+\RequirePackage{ellipsis}    % Korrigiert den Weißraum um Auslassungspunkte
+
+% Schusterjungen und Hurenkinder vermeiden
+\clubpenalty10000
+\widowpenalty10000
+\displaywidowpenalty=10000
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Gleitobjenkte Bilder, Tabellen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{placeins}    % Befehl \FloatBarrier verhindert floats
+
+%%  Platzbedarf für Gleitobjekte und Textrumpf
+\renewcommand{\floatpagefraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+
+%%  Pakete für Fußnooten und Beschriftungen      %%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{footnote}    % Ermöglicht Fußnoten in gleitenden Umgebungen
+\RequirePackage[font=footnotesize]{caption}  % Ermöglicht Beschriftungen beliebiger Objekte (eckige Klammern: Schriftgröße)
+\RequirePackage{subcaption}  % Beschriften von TeilBildern bzw. ~tallben
+\RequirePackage{chngcntr}
+\@ifclassloaded{hsklarticle}{}
+{
+  \counterwithout{footnote}{chapter} % Fußnoten durchgehend nummeriert
+}
+\RequirePackage{sidecap} % Erweiterung Beschriftung von Bildern
+% \setlength{\belowcaptionskip}{12pt}
+% \setlength{\abovecaptionskip}{12pt}
+
+
+%%  Packages für Grafiken & Abbildungen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{graphicx} %%Zum Laden von Grafiken
+%% Beachten Sie:
+%% Die Einbindung einer Grafik erfolgt mit \includegraphics{Dateiname}
+%% bzw. über den Dialog im Einfügen-Menü.
+%%
+%% Im Modus "LaTeX => PDF" können Sie u.a. folgende Grafikformate verwenden:
+%%   .jpg  .png  .pdf  .mps
+%%
+%% In den Modi "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF"
+%% können Sie u.a. folgende Grafikformate verwenden:
+%%   .eps  .ps  .bmp  .pict  .pntg
+\RequirePackage{rotating}     % Dreht bei Bedarf die Abbildung
+%\RequirePackage{pdfpages}    % zum einfügen von PDF ins Dokument \includepdf
+%\RequirePackage{float}       % Positionierung von Grafiken [H]
+%\RequirePackage{wrapfig}
+\makeatletter
+  \def\ScaleIfNeeded{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+  }
+\makeatother
+
+\makeatletter
+  \def\ScaleByXIfNeeded#1{%
+  \ifdim\Gin@nat@width>#1\linewidth
+    #1\linewidth
+  \else
+    \Gin@nat@width
+  \fi
+  }
+\makeatother
+
+%%  Packages Tabellen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{booktabs}  %Definiert in Tabellen drei neue Befehle für horizon-
+											 %tale Linien: \toprule, \midrule und \bottomrule. Die Befehle setzen automatisch passende
+											 %vertikale Abstände zwischen Text und Linie. --> excel to Latex
+\RequirePackage{tabularx}  % zum automatischen Berechnen von Tabellen
+\RequirePackage{multirow}  % Für mehrspaltige Tabellen und excel to Latex
+\RequirePackage{tabu}      % Tabellenformatierung
+% Beispiel \begin{tabu}[l]{C{0.3cm}R{1cm}R{1cm}L{1cm}} für Defnition eigener Spaltentyp
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}  % linksbündig Name "L"
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}   % rechtsbündig Name "R"
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}    % zentriert Name "C"
+
+
+%% Ende der Einstellungen für das Layout  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{ifpdf}
+\ifpdf
+% bei direkt erzeugten PDFs können auch alle Verweise Links sein      %
+\RequirePackage[colorlinks=false,
+        linkcolor=red,
+        citecolor=red,
+        filecolor=red,
+        urlcolor=red,
+        bookmarks=true,
+        bookmarksopen=true,
+        bookmarksopenlevel=3,
+        plainpages=false,
+        pdfpagelabels=true]{hyperref} % erzeugt unsichtbare PDF-links
+\hypersetup{
+  pdfpagelayout=TwoPageRight,
+	pdftitle={},
+  pdfsubject={},
+  pdfauthor={},
+  %pdfproducer={Produzent},
+  pdfkeywords={},
+  pdfcreator={pdflatex},
+}
+% Nachteil: Bilder werden nur als Pixelgrafik eingebunden, Screen ok  %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%In Inhaltsverzeichnissen soll eine einheitlichere Schrift genutzt werden
+%Der Vorteil hiervon ist streitbar, bei Bedarf auskommentieren
+\RequirePackage{tocloft}
+\DeclareRobustCommand{\cftchapfont}{\bfseries}
+
+
+% Etwas hübschere Referenzen natürlich alle einheitlich
+% Referenz auf Abbildungen
+  \newcommand {\rf} [1] {(\(\rightarrow\)\nolinebreak\ Abb.\nolinebreak\ \ref{#1})}
+% Referenz auf Tabellen
+  \newcommand {\rt} [1] {(\(\rightarrow\)\nolinebreak\ Tab.\nolinebreak\ \ref{#1})}
+% Referenz auf Definitionen
+  \newcommand {\rd} [1] {(\(\rightarrow\)\nolinebreak\ Def.\nolinebreak\ \ref{#1})}
+% Referenz auf Sätze
+  \newcommand {\rs} [1] {(\(\rightarrow\)\nolinebreak\ Satz\nolinebreak\ \ref{#1})}
+% Referenz auf Kapitel
+  \newcommand {\rk} [1] {(\(\rightarrow\)\nolinebreak\ Kapitel\nolinebreak\ \ref{#1})}
+% Referenz auf Anhänge
+  \newcommand {\ra} [1] {(\(\rightarrow\)\nolinebreak\ Anhang\nolinebreak\ \ref{#1})}
+% Referenz auf Gleichungen
+  \newcommand {\re} [1] {(\(\rightarrow\)\nolinebreak\ Gleichung\nolinebreak\ \ref{#1})}
+% Referenz auf Glossar
+  \newcommand {\rg} [1] {\(\rightarrow\)\gls{#1}}
+% noch zu tun
+  \newcommand {\todo} [1] {\footnote{to do: #1}}
+
+%Tabellen
+\RequirePackage{multicol}
+\RequirePackage{longtable}
+\RequirePackage{hologo}
+
+\newenvironment{hstable}[1]
+{\par\begingroup\small\begin{longtable}{#1}}
+{\end{longtable}\endgroup}
+
+\newcommand{\HSKLany}[1]{\textsl{\lower-.2ex\hbox{H\kern-.05em S}K\kern-.1em\lower.5ex\hbox{L}}\kern-0.2em\textsc{#1}\xspace}
+\newcommand\HSKLarticle{\HSKLany{article}}
+\newcommand\HSKLreport{\HSKLany{report}}
+\newcommand\HSKLbook{\HSKLany{book}}
+
+\endinput
+
+%Mit diesen Kommandos kann mit einem Einzeiler ein neuer Wahr-/Falsch-Schalter
+%erzeugt werden. Dieser Schalter kann dann als Option beim Aufruf von
+%\documentclass[...]{hsklbook} in den eckigen Klammern genutzt werden.
+\newcommand{\hsboolTrue}[1]{%
+  \ifcsname#1\endcsname\else
+  \expandafter\newif\csname if#1\endcsname
+  \fi
+  \csname #1true\endcsname
+}
+\newcommand{\hsboolFalse}[1]{%
+  \ifcsname#1\endcsname\else
+  \expandafter\newif\csname if#1\endcsname
+  \fi
+  \csname #1false\endcsname
+}
+\newcommand{\hsbooloptionTrue}[2]
+{
+  \hsboolTrue{#2}
+  \FamilyBoolKey{hskl}{#1}{#2}
+}
+\newcommand{\hsbooloptionFalse}[2]
+{
+  \hsboolFalse{#2}
+  \FamilyBoolKey{hskl}{#1}{#2}
+}
