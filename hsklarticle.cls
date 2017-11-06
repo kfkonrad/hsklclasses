@@ -1,6 +1,7 @@
 %Die folgenden Zeilen NICHT ÄNDERN (abgesehen vom Datum als Versionskontrolle)
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{hsklarticle}[2017/03/10 hsklarticle - Eine Article-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrrartcl]
+\def\hsversion{2.4}
+\ProvidesClass{hsklarticle}[2017/11/06 hsklarticle v\hsversion - Eine Article-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrrartcl]
 %Damit werden alle Optionen direkt an scrbook durchgeschleift
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax

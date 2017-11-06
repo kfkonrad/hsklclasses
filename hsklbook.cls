@@ -1,7 +1,7 @@
 %Die folgenden Zeilen NICHT ÄNDERN (abgesehen vom Datum als Versionskontrolle)
 \NeedsTeXFormat{LaTeX2e}
-\def\hsversion{2.4a}
-\ProvidesClass{hsklbook}[2017/05/19 hsklbook v\hsversion - Eine Book-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrbook]
+\def\hsversion{2.4}
+\ProvidesClass{hsklbook}[2017/11/06 hsklbook v\hsversion - Eine Book-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrbook]
 
 %% Anmerkung des Autors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% In Klassen und Paketen wird per Konvention der Befehl             %%
