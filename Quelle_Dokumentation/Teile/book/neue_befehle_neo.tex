@@ -1,0 +1,156 @@
+\subsection{Neue Befehle}
+Die gesamte übliche Titelei wird automatisiert erstellt. Die nachfolgenden
+Befehle dienen zur Anpassung von Namen, Thema und Ähnlichem in der Titelei und
+dem Sperrvermerk. Die eingetragenen Werte sind exemplarisch.
+
+Wenn durch einzelne Optionen bestimme Ausgaben unterdrückt werden, so können die
+Daten dazu (etwa copyright-showpermanentcontact und \verb!\hspermanentcontact!)
+dennoch angegeben werden. So lässt sich bei Bedarf eine Option de-/aktivieren,
+ohne dass weitere Änderungen am Dokument nötig sind.
+
+\iffalse%Hier stehen die Befehle in natürlich gewachsender Abfolge
+\neubefehl{hslogofile}{Pfad zum Hochschullogo festlegen.}{pfad/zum/logo}
+\neubefehl{hstitle}{Titel der Arbeit.}{Titelchen}
+\neubefehl{hssubtitle}{Untertitel der Arbeit.}{Mein genialer Untertitel}
+\neubefehl{hsdate}{Datum der Arbeit. Falls nicht angegeben wird das aktuelle Datum verwendet.}{10.~Januar~2038}
+\neubefehl{hsyear}{Jahr in dem die Arbeit geschrieben wurde. Falls nicht angegeben, wird das aktuelle Jahr verwendet.}{2038}
+\neubefehl{hsmajor}{Studiengang.}{Studiengängchen}
+\neubefehl{hsmatriculation}{Matrikelnummer.}{0815123}
+\neubefehl{hsauthor}{Voller Name des Autors.}{Hugo Nämchen}
+\neubefehl{hsaddress}{einzeilige Adresse.}{Beispielstraße 1, 12345 Teststadt}
+\neubefehl{hspermanentcontact}{Permanenter Kontakt wie z.B. E-Mail.}{mailchen@example.com}
+\neubefehl{hsaddmultiauthor}{Neuen Autoreneintrag für Copyrightseite einfügen. Die Reihenfolge der 4 Argumente ist \ttfamily Voller Name\normalfont, \ttfamily Matrikelnummer\normalfont, \ttfamily einzeilige Adresse\normalfont, \ttfamily{Per\-ma\-nent\-kon\-takt (Email)}\normalfont.}{Zu M. Beispiel\}\{0815123\}\{Teststraße 42, 12345 Dummenbach\}\\\quad\{beispiel@example.com}
+\neubefehl{hsplaceofstudy}{Studienort, also Zweibrücken, Pirmasens oder Kaiserslautern.}{Studienörtchen}
+\neubefehl{hsplaceofstudyaddress}{Adresse des Studienorts, einzeilig.}{Beispielstraße 1, 12345 Teststädtchen}
+\neubefehl{hssupervisorname}{Name des Betreuers.}{Nämelein}
+\neubefehl{hssupervisorphone}{Telefonnummer des Betreuers.}{+49 012 3456 7890}
+\neubefehl{hssupervisormail}{E-Mail des Betreuers.}{naemchen@example.com}
+\neubefehl{hsdistribution}{Verwendete LaTeX-Distribution. Meistens ist das \texttt{\textbackslash{}Mik\{\}TeX} oder \texttt{\textbackslash{}TeX\textasciitilde{}Live}.}{\textbackslash{}TeX\{\}lein}
+\neubefehl{hsdedication}{Widmung oder Zitat.}{Das Glück ist mit den Dummen.}
+\neubefehl{hskindofpaper}{Art der Arbeit: Bachelorarbeit, Praxisbericht, Hausarbeit etc.}{Arbeitchen}
+\neubefehl{hsworkenvironment}{Ihre Entwicklungsumgebung bzw. Ihr Editor, zB \texttt{\textbackslash{}TeX\{\}nicCenter}, \texttt{Atom} oder \texttt{\textbackslash{}TeX\{\}works}.}{Umgebüngchen}
+\neubefehl{hsaddsupervisor}{Einen weiteren Betreuer mit vollem Namen, Telefonnnummer und E-Mail hinzufügen.}{Zu M. Beispiel\}\{+49 081 5123\}\{beispiel@example.com}
+\neubefehl{hscompany}{Name des Unternehmens mit Rechtsform.}{Firma GerneGroß}
+\neubefehl{hsrestrictedchapters}{Vom Sperrvermerk betroffene Kapitel hier benennen, auch die Anhänge.}{1, 2, 3, 5, 8, 12, Anhang B}
+\neubefehl{hsfaculty}{Fachbereich.}{Fachbereichelchen}
+\neubefehl{hsrestrictionduration}{Dauer der Sperre in Jahren.}{3}
+\fi%Und hier alphabetisch
+\neubefehl{hsaddmultiauthor}{Neuen Autoreneintrag für Copyrightseite einfügen. Die Reihenfolge der 4 Argumente ist \ttfamily Voller Name\normalfont, \ttfamily Matrikelnummer\normalfont, \ttfamily einzeilige Adresse\normalfont, \ttfamily{Per\-ma\-nent\-kon\-takt (Email)}\normalfont.}{Zu M. Beispiel\}\{0815123\}\{Teststraße 42, 12345 Dummenbach\}\\\quad\{beispiel@example.com}
+\neubefehl{hsaddress}{einzeilige Adresse.}{Beispielstraße 1, 12345 Teststadt}
+\neubefehl{hsaddsupervisor}{Einen weiteren Betreuer mit vollem Namen, Telefonnnummer und E-Mail hinzufügen.}{Zu M. Beispiel\}\{+49 081 5123\}\{beispiel@example.com}
+\neubefehl{hsauthor}{Voller Name des Autors.}{Nämchen}
+\neubefehl{hscompany}{Name des Unternehmens mit Rechtsform.}{Firma GerneGroß}
+\neubefehl{hsdate}{Datum der Arbeit. Falls nicht angegeben wird das aktuelle Datum verwendet.}{10.~Januar~2038}
+\neubefehl{hsdedication}{Widmung oder Zitat.}{Das Glück ist mit den Dummen.}
+\neubefehl{hsdistribution}{Verwendete LaTeX-Distribution. Meistens ist das \texttt{\textbackslash{}Mik\{\}TeX} oder \texttt{\textbackslash{}TeX\textasciitilde{}Live}.}{\textbackslash{}TeX\{\}lein}
+\neubefehl{hsfaculty}{Fachbereich.}{Fachbereichelchen}
+\neubefehl{hskindofpaper}{Art der Arbeit: Bachelorarbeit, Praxisbericht, Hausarbeit etc.}{Arbeitchen}
+\neubefehl{hslogofile}{Pfad zum Hochschullogo festlegen.}{pfad/zum/logo}
+\neubefehl{hsmajor}{Studiengang.}{Studiengängchen}
+\neubefehl{hsmatriculation}{Matrikelnummer.}{0815123}
+\neubefehl{hspermanentcontact}{Permanenter Kontakt wie z.B. E-Mail.}{mailchen@example.com}
+\neubefehl{hsplaceofstudyaddress}{Adresse des Studienorts, einzeilig.}{Beispielstraße 1, 12345 Teststädtchen}
+\neubefehl{hsplaceofstudy}{Studienort, also Zweibrücken, Pirmasens oder Kaiserslautern.}{Studienörtchen}
+\neubefehl{hsrestrictedchapters}{Vom Sperrvermerk betroffene Kapitel hier benennen, auch die Anhänge.}{1, 2, 3, 5, 8, 12, Anhang B}
+\neubefehl{hsrestrictionduration}{Dauer der Sperre in Jahren.}{3}
+\neubefehl{hssubtitle}{Untertitel der Arbeit.}{Mein genialer Untertitel}
+\neubefehl{hssupervisormail}{E-Mail des Betreuers.}{naemchen@example.com}
+\neubefehl{hssupervisorname}{Name des Betreuers.}{Nämelein}
+\neubefehl{hssupervisorphone}{Telefonnummer des Betreuers.}{+49 012 3456 7890}
+\neubefehl{hstitle}{Titel der Arbeit.}{Titelchen}
+\neubefehl{hsworkenvironment}{Ihre Entwicklungsumgebung bzw. Ihr Editor, zB \texttt{\textbackslash{}TeX\{\}nicCenter}, \texttt{Atom} oder \texttt{\textbackslash{}TeX\{\}works}.}{Umgebüngchen}
+\neubefehl{hsyear}{Jahr in dem die Arbeit geschrieben wurde. Falls nicht angegeben, wird das aktuelle Jahr verwendet.}{2038}
+\subsection{Weiterführende Befehle der Vorlage}
+
+Die bisherigen Befehle dienten \enquote{nur} dazu, den Lückentext der Vorlage
+mit individuellen Inhalten zu füllen. Die hier eingeführten Befehle gehen
+darüber hinaus, denn mit ihnen kann die Vorlage als solches manipuliert werden.
+Die Anpassung der Texte auf der Titelrückseite (Copyrightseite) und die
+Veränderung der Position einzelner Elemente wie Literaturverzeichnis oder
+Sperrvermerk im PDF fallen aktuell hierunter.
+
+Ziel dieser Befehle ist es, langfristig gesehen, eine universell für jede
+Hochschule/Universität verwendbare Vorlage zu schaffen.
+
+\neubefehl{hscopyrighttext}{Der Copyrighttext.}{Keine Rechte für niemanden.}
+
+\neubefehl{hscopyrightowner}{Copyrightinhaber, sofern von der HS KL abweichend.}{Maximilian Rechtehaber}
+
+\neubefehl{hsfurthernotices}{Weitere Angaben unterhalb des Copyrightinhabers. Hier kann z.B. stehen, wie/ob Begriffe gegendert werden, dass Zitate als soche gekennzeichnet sind etc.}{Ich zitiere niemanden, ist alles selbst ausgedacht.}
+
+\parasectionbig{hslayout}
+
+\texttt{\textbackslash{}hslayout} hat 2 Argumente, das erste Argument
+legt fest, an welcher Stelle ein Element verwendet werden soll, während das
+zweite Argument dieses Element bestimmt.
+
+Wenn auch nur eines der verfügbaren Elemente mit dem
+\texttt{\textbackslash{}hslayout}-Befehl platziert wird, so müssen
+\emph{alle} Elemente mit \texttt{\textbackslash{}hslayout}
+positioniert werden!!
+
+Es gibt 4 mögliche Stellen:
+
+\begin{itemize}\ttfamily
+	\item frontmatter
+	\item mainmatter
+	\item backmatter
+	\item end
+\end{itemize}
+
+Die Stelle \texttt{frontmatter} lässt das Element als Teil von
+\texttt{\textbackslash{}hsfrontmatter} erscheinen.
+
+Die Stelle \texttt{mainmatter} lässt das Element als Teil von
+\texttt{\textbackslash{}hsmainmatter} erscheinen.
+
+Die Stelle \texttt{backmatter} lässt das Element als Teil von
+\texttt{\textbackslash{}hsbackmatter} erscheinen.
+
+Die Stelle \texttt{end} lässt das Element am Ende des Dokumentes
+erscheinen.
+
+Aktuell stehen 8 Elemente zur Auswahl:
+
+\begin{itemize}\ttfamily
+	\item title
+	\item restrictionnote
+	\item \verb*!table of contents!
+	\item \verb*!tables of figures/tables!
+	\item abbreviations/glossary
+	\item bibliography
+	\item appendix
+	\item index
+\end{itemize}
+
+Die Leerzeichen sind Teil der Bezeichner und unbedingt bei der
+Verwendung zu übernehmen!!
+
+Die Namen sind sprechend gewählt, dennoch folgen der Klarheit halber hier die
+Erläuterungen der einzelnen Elemente:
+
+\begin{description}
+	\item[title] Die Titelei bestehend aus Titelblatt, Copyrightseite \& Widmung
+	\item[restrictionnote] Sperrvermerk
+	\item[table of contents] Inhaltsverzeichnis
+	\item[tables of figures/tables] Abbildungs- und Tabellenverzeichnisse
+	\item[abbreviations] Abkürzungen, Symbolverzeichnis, Glossar
+	\item[bibliography] Literaturverzeichnis
+	\item[appendix] keine Ausgabe, aber Ausgabeanpassungen für Anhänge
+	\item[index] Index
+\end{description}
+
+Zur Klärung der Syntax hier noch die Standardeinstellungen von \HSKLbook:
+\begin{verbatim*}
+	\hslayout{frontmatter}{title}
+	\hslayout{frontmatter}{restrictionnote}
+
+	\hslayout{mainmatter}{table of contents}
+	\hslayout{mainmatter}{tables of figures/tables}
+	\hslayout{mainmatter}{abbreviations}
+
+	\hslayout{backmatter}{bibliography}
+	\hslayout{backmatter}{appendix}
+
+	\hslayout{end}{index}
+\end{verbatim*}

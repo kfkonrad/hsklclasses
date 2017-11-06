@@ -1,0 +1,45 @@
+\section{Allgemeiner Aufbau der Dokumentenklassen}
+
+Diese Dokumentation behandelt die Dokumentenklassen \HSKLarticle,
+\HSKLreport und \HSKLbook. Diese basieren auf den korrespondieren
+KOMAScript-Klassen \verb!scrartcl!, \verb!scrreprt! sowie \verb!scrbook!, wobei
+auf Kurznammen wie \verb!XYreprt! zugunsten der Lesbarkeit und Merkbarkeit
+verzichtet wurde.
+
+Der Großteil der Ergänzungen zu den KOMAScript-Klassen dient der Anpassung des
+Dokumentenlayouts. Jeder Befehl aus den KOMAScript-Klassen ist auch in den
+jeweiligen \HSKL-Klassen verfügbar, die umfangreiche Dokumentation von KOMAScript
+gibt Aufschluss über deren gesamte Funktionalität. Die jeweils aktuelle Fassung
+findet sich unter \url{http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}.
+
+\subsection{Wichtige Funktionen der \HSKL-Klassen}
+Die deutsche Sprachanbindung durch \verb!babel! ist automatisiert und
+um einige fehlende Übersetzungen ergänzt worden. Bei Bedarf kann \verb!babel!
+wie gewohnt mit benutzerdefinierten Sprachlisten wie etwa \verb![ngerman,english]! eingebunden werden.
+
+Der Mathematiksatz ist mithilfe von \AmS\hspace{1pt}math optimiert. Zum Thema
+zeitgemäßer Mathematiksatz empfiehlt der Autor das \LaTeX\ Math Cheat Sheet,
+das unter \url{https://github.com/kfkonrad/mathcheat/blob/master/mathcheat.pdf}
+heruntergeladen werden kann. In dem Cheat~Sheet stehen auf einer Seite alle
+wichtigen, modernen Befehle, die man für den Mathematiksatz in \LaTeX\ benötigt.
+
+Um einen höheren vertikalen Abstand zwischen zwei Elementen zu erzeugen gibt es
+den Befehl \verb!\extravspace!. Anders als bei Befehlen wie \verb!\vspace{1cm}!
+wird mit \verb!\extravspace! kein fester Abstand erzeugt, sondern einer, der vom
+aktuell eingestellten Zeilenabstand abhängig ist. Dadurch ist auch nach Änderung
+des Zeilenabstandes, der Schriftart oder Schriftgröße eine einheitliche Ausgabe
+gesichert.
+Der Zeilenabstand kann mit dem Befehl \verb!\linespread{1.5}! angepasst werden,
+Standardwert ist 1.2.
+
+Für Tabellen gibt es eine angepasste Umgebung namens \verb!hstable!. Sie ist
+wie \verb!tabular! zu benutzen und kann mehrere Seiten überspannen. Für
+\verb!hstable! steht zudem die Funktionalität der Pakete
+\verb!longtable!\footnote{Dokumentation unter
+\url{http://mirrors.ctan.org/macros/latex/required/tools/longtable.pdf}}
+und \verb!booktabs!\footnote{Deutschsprachige Dokumentation unter
+\url{http://mirrors.ctan.org/macros/latex/contrib/booktabs-de/booktabs-de.pdf}}
+zur Verfügung. Um optisch anspruchsvolle und typographisch saubere Tabellen zu
+erzeugen wird \emph{dringend} empfohlen, wenigstens die Mittel des
+\verb!booktabs! Paketes zu verwenden. Die Dokumentation erklärt die Anwendung
+und die Gründe für die zugehörigen Designentscheidungen ausführlich.

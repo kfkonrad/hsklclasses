@@ -1,0 +1,89 @@
+\addsec{Kurzüberblick}
+
+Um eine Studienarbeit nach den Vorgaben von Prof.~Adrian~Müller zu schreiben,
+kann man folgende Schritte befolgen:
+
+\begin{enumerate}
+	\item Die Dokumentenklasse laden:\\
+		\verb!\listfiles\documentclass[shortprelims,oneside,openany,!\\
+		\verb!index=totoc,listof=totoc,bibliography=totoc]{hsklbook}!
+	\item Die Anpassungen für das Literaturverzeichnis laden:\\
+		\verb!\usepackage{bonmuellerstyle}!
+	\item Die Daten für das Titelblatt mit den folgenden Befehlen angeben:\\
+		\begin{minipage}{\textwidth}
+			\begin{multicols}{2}
+				\verb!\hslogofile{path/to/file}!\\
+				\verb!\hstitle{Mein toller Titel}!\\
+				\verb!\hssubtitle{Ein cooler Untertitel}!\\
+				\verb!\hsdate{10. Januar 2038}!\\
+				\verb!\hsyear{2038}!\\
+				\verb!\hsmajor{Medieninformatik}!\\
+				\verb!\hsmatriculation{876543}!\\
+				\verb!\hsauthor{Kevin Konrad}!
+			\end{multicols}
+		\end{minipage}
+
+		\verb!\hssupervisorname{Prof.~Adrian~Müller, PMP, PSM-I, CSM}!
+	\item Das Babel-Paket für deutsche Sprachanpassungen und Biblatex mit
+		Einstellungen nach A.~Müllers Vorgaben werden automatisch eingebunden. Nur
+		den Namen der \verb!.bib!-Datei muss man noch angeben:\\
+		\verb!\bibliography{literatur}!\\
+		Die
+		Pakete für das Handling von Schrift- \& Eingabekodierung muss man selbst
+		einbinden:\\
+		Windows: \verb!\usepackage[T1]{fontenc} \usepackage[ansinew]{inputenc}!\\
+		Linux: \verb!\usepackage[T1]{fontenc} \usepackage[latin1]{inputenc}!\\
+		macOS: \verb!\usepackage[T1]{fontenc} \usepackage[applemac]{inputenc}!\\
+		utf8: \verb!\usepackage[T1]{fontenc} \usepackage[utf8]{inputenc}!\\
+		mit \hologo{XeLaTeX} oder \hologo{LuaLaTeX}: \verb!\usepackage{fontspec}!
+	\item \verb!\begin{document}!\\
+		\verb!\hsfrontmatter\hsmainmatter!\\
+		Damit ist jetzt der Titel erzeugt und es geht an die eigentliche Arbeit.\\
+		Hier setzt man dann die Kapitel ein, etwa mit \verb!\input{kapitel1}!.\\
+		Zum Schluss wird nur noch mit\\
+		\verb!\hsbackmatter!\\
+		\verb!\end{document}!\\
+		das Literaturverzeichnis erzeugt. Bei Bedarf können hinter
+		\verb!\hsbackmatter! mit\\\verb!\addchap{Anhang}\addsec{Beispielanhang 1}!
+		Anhänge angelegt werden.
+\end{enumerate}
+
+Diese Befehle gibt es auch schon fertig verpackt in einem Minimalbeispiel. Mehr
+Informationen über die sonstigen Fähigkeiten von \HSKLbook
+stehen im weiteren Verlauf der Dokumentation, mit allen Features ist
+\HSKLbook auch für eine Bachelorthesis geeignet.
+
+Für Windows-Anwender empfehle ich die IDE \TeX{}nikCenter\footnote{Download
+unter \url{http://www.texniccenter.org/download/}}. Sie ist einfach zu
+bedienen und bietet Bugtracking bis zur Ursprungszeile im Code. Um damit die
+STUA zu kompilieren, muss man das mitgelieferte \verb!Ausgabeprofil_STUA.tco!
+importieren. Dazu bei geöffnetem \TeX{}nikCenter \verb!Alt + F7! drücken. Auf
+\verb!Importieren! klicken, erneut auf \verb!Importieren! klicken, das neue
+Profil \verb!Latex => PDF - STUA! auswählen und mit \verb!OK! bestätigen.
+
+Für Mac- \& Linuxnutzer gibt es ein Makefile. Der Name
+der Haupt-\TeX-Datei muss dafür \verb!stua.tex! und der Name der
+\verb!.bib!-Datei \verb!literatur.bib! lauten. Die Namen sind alternativ im
+Makefile änderbar.
+
+Was unterscheidet diese Vorlage von den Standardklassen oder den reinen
+\hologo{KOMAScript}-Klassen? Mit \HSKLbook ist die Formatierung der
+Arbeit schon von Beginn an abgeschlossen. Das Design ist abgesehen von der
+Schriftart (hier wird Computer Modern, die \LaTeX-Standardschriftart, benutzt)
+an das Corporate Design der Hochschule Kaiserslautern angelehnt. Wer alle
+Befehle des obigen Beispiels ausfällt, braucht sich auch um die Formatierung der
+Titelseite keine Gedanken mehr zu machen.
+
+Für eine Bachelorarbeit braucht man die obige Klassenoption \verb!oneside!
+(1. Listenpunkt, 2. Zeile) nur durch \verb!twoside=semi! zu ersetzen und die
+Option \verb!shortprelims! zu entfernen. Dadurch wird auch die
+Copyrightanmerkung erzeugt.
+
+Die Möglichkeit je ein Glossar, Symbol- \&
+Abkürzungsverzeichnis zu erzeugen bietet \HSKLbook ebenfalls.\footnote{Für
+exemplarische Einträge das Paket \texttt{AbkSymGlo.sty} einbinden und mit den
+darin vermerkten Befehlen im Fließtext einsetzen. Gerne auch eigene Einträge
+schreiben :)} Außerdem kann ein Sperrvermerk generiert werden und sogar eine
+Trennung von Online- \& Offlinequellen ist möglich.\footnote{Hierzu die
+Klassenoption \texttt{splitbib} angeben und jeden online-Eintrag mit dem Keyword
+\enquote{Internet} versehen.}

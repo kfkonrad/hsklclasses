@@ -1,0 +1,112 @@
+\listfiles
+\documentclass[
+DIV=12,
+BCOR=0cm,
+%Abbildungs- bzw Tabellenverzeichnis an/ausschalten
+listoffigures=false,
+listoftables=false,
+%Eintraege der Titelseite gezielt an/ausschalten
+titlepage-showsupervisor=true,
+titlepage-showmatriculation=true,
+copyright-showname=true,
+copyright-showaddress=true,
+copyright-showpermanentcontact=true,
+copyright-multiauthor=false,
+%Komfortfunktion fuer mehrere Autoren, fasst folgende Einstellungen zusammen:
+%% titlepage-showmatriculation=false,
+%% copyright-showname=false,
+%% copyright-showaddress=false,
+%% copyright-showpermanentcontact=false,
+%% copyright-multiauthor=true,
+multiauthor=false,
+%Erste Seite des Titels anzeigen/unterdruecken
+titlepage=true,
+%Weitere Seiten der Titelei unterdruecken
+shortprelims=false,
+%Literatur in Internet- und sonstige Quellen aufteilen
+internetbibliography=false,
+%Widmung an/ausschalten
+dedication=true,
+%
+twoside=false, %Bei einseitigem Druck
+%twoside=true, %Bei zweiseitigem Druck
+openany, %optional, aber nur bei einseitigem Druck verwenden!
+%Index, Listen und Literatur zum Inhaltsverzeichnis
+index=totoc,
+listof=totoc,
+bibliography=totoc,
+]{hsklbook}
+
+%Nicht notwendig, da automatisiert. Bei Bedarf Sprachen hinzufuegen
+\usepackage[ngerman]{babel}
+
+% Zeichencodierung, um Umlaute direkt zu tippen
+\usepackage[ansinew]{inputenc}    % Windows
+%\usepackage[latin1]{inputenc}    % Linux
+%\usepackage[applemac]{inputenc}  % Mac
+%\usepackage[utf8]{inputenc}      % Kodierung fuer Unicode-Zeichen
+\usepackage[T1]{fontenc}          % europaeische CM-Variante EC
+
+% hier muessen dann die .bib Datenbanken mit der Literatur rein.
+\bibliography{Literatur}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Daten fuer Titelei der Arbeit  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hslogofile{Bilder/Allgemein/HSKL_LOGO_4c_pos}
+\hstitle{Titelchen}
+\hssubtitle{Mein genialer Untertitel}
+\hsdate{10.~Januar~2038}
+\hsyear{2038}
+\hsmajor{Studiengaengchen}
+\hsmatriculation{0815123}
+\hsauthor{Karl Naemchen}
+\hsaddress{Beispielstrasse 1, 12345 Teststadt}
+\hspermanentcontact{kontaktlein@example.com}
+%hsaddmultiauthor{Zu M. Beispiel}{0815123}
+%  {Teststrasse 42, 12345 Dummenbach}{beispiel@example.com}
+\hsplaceofstudy{Studienoertchen}
+\hsplaceofstudyaddress{Beispielstrasse 1, 12345 Teststaedtchen}
+\hssupervisorname{Naemelein}
+\hssupervisorphone{+49 012 3456 7890}
+\hssupervisormail{naemchen@example.com}
+\hsdistribution{\TeX{}lein}
+\hsdedication{Das Glueck ist mit den Dummen.}
+\hskindofpaper{Arbeitchen}
+\hsworkenvironment{Umgebuengchen}
+\hsaddsupervisor{Name2}{Telefon2}{Mail2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Daten fuer Sperrvermerk  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hscompany{Firma GerneGross} %Name des Unternehmens mit Rechtsform
+\hsrestrictedchapters{1, 2, 3, 5, 8, 12, Anhang B}
+\hsfaculty{Fachbereichelchen}
+\hsrestrictionduration{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Weiterfuehrende Befehle  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% nur nach Absprache mit den Betreuern einsetzen!!  %%%%%%%%%%%%%%%%%%
+%% Zu hslayout unbedingt die Dokumentation lesen!!  %%%%%%%%%%%%%%%%%%%
+%\hscopyrighttext{Keine Rechte fuer niemanden.}
+%\hscopyrightowner{Maximilian Rechtehaber}
+%\hsfurthernotices{Ich zitiere niemanden, ist alles selbst ausgedacht.}
+%\hslayout{frontmatter}{title}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENT BEGINNT HIER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\hsfrontmatter
+\input{Ehrenwort}
+\hsmainmatter
+
+% Hier muessen dann die eigenen Kapitel rein
+\input{Einleitung}
+\input{Methodik}
+\input{Fazit}
+
+% Quellen, Index
+\hsbackmatter
+\input{Versicherung}
+
+\end{document}

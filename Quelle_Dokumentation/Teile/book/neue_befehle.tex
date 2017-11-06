@@ -1,0 +1,104 @@
+\subsection{Neue Befehle}
+\subsubsection{Titelei}
+Die gesamte übliche Titelei wird automatisiert erstellt. Die nachfolgenden
+Befehle dienen zur Anpassung von Namen, Thema und Ähnlichem in der Titelei. Die
+eingetragenen Werte sind exemplarisch:
+
+\paragraph{hsdedication}
+Widmung oder Zitat\\
+\textbackslash{}hsdedication\{Das Glück ist mit den Dummen.\}
+
+\par\begingroup\small\begin{tabularx}{\textwidth}{>{\ttfamily}lX}
+\parbox{
+\widthof{\textbackslash{}hsdedication\{Das Glück ist mit den Dummen.\}} }
+{\textbackslash{}hslogofile\{pfad/zum/logo\}}
+		& Pfad zum Hochschullogo festlegen
+	\\[3ex]
+	\textbackslash{}hstitle\{Titelchen\}
+		& Titel der Arbeit
+	\\[3ex]
+	\textbackslash{}hsdate\{10.~Januar~2038\}
+		& Datum der Arbeit. Falls nicht angegeben wird das aktuelle Datum verwendet
+%\end{tabularx}\endgroup
+\\[3ex]
+%\par\begingroup\small\begin{tabularx}{\textwidth}{>{\ttfamily}lX}
+	\textbackslash{}hsyear\{2038\}
+		& Jahr in dem die Arbeit geschrieben wurde. Falls nicht
+		angegeben wird das aktuelle Jahr verwendet
+	\\[3ex]
+	\textbackslash{}hsmajor\{Studiengängchen\}
+		& Studiengang
+	\\[3ex]
+	\textbackslash{}hsmatriculation\{0815123\}
+		& Matrikelnummer
+	\\[3ex]
+	\textbackslash{}hsauthor\{Nämchen\}
+		& Voller Name des Autors
+	\\[3ex]
+	\parbox{0.5\textwidth}{\textbackslash{}hsaddress\{Beispielstraße 1,
+	12345 Teststadt\}}
+		& \parbox{0.3\textwidth}{einzeilige Adresse\\~}
+	\\[3ex]
+	\textbackslash{}hspermanentcontact\{mailchen@example.com\}
+		& Permanenter Kontakt wie z.B. E-Mail
+	\\[3ex]
+	\textbackslash{}hsplaceofstudy\{Studienörtchen\}
+		& Studienort, also Zweibrücken, Pirmasens oder Kaiserslautern
+	\\[3ex]
+	\parbox{0.5\textwidth}{\textbackslash{}hsplaceofstudyaddress%
+	\{Beispielstraße 1, 12345 Teststädtchen\}}
+		& \parbox{0.35\textwidth}{Adresse des Studienorts, einzeilig\\~}
+	%\\[3ex]
+\end{tabularx}\endgroup\par\begingroup\small\begin{tabularx}{\textwidth}{>{\ttfamily}lX}
+	\textbackslash{}hssupervisorname\{Nämelein\}
+		& Name des Betreuers
+	\\[3ex]
+	\textbackslash{}hssupervisorphone\{+49 012 3456 7890\}
+		& Telefonnummer des Betreuers
+	\\[3ex]
+
+	\textbackslash{}hssupervisormail\{naemchen@example.com\}
+		& E-Mail des Betreuers
+	\\[3ex]
+	\textbackslash{}hsdistribution\{\textbackslash{}TeX\{\}lein\}
+		& Verwendete LaTeX-Distribution. Meistens ist das
+		\texttt{\textbackslash{}Mik\{\}TeX} oder
+		\texttt{\textbackslash{}TeX\textasciitilde{}Live}
+	\\[3ex]
+	\textbackslash{}hsdedication\{Das Glück ist mit den Dummen.\}
+		& Widmung oder Zitat
+	\\[3ex]
+	\textbackslash{}hskindofpaper\{Arbeitchen\}
+		& Art der Arbeit: Bachelorarbeit, Praxisbericht, Hausarbeit etc.
+	\\[3ex]
+	\textbackslash{}hsworkenvironment\{Umgebüngchen\}
+		& Ihre Entwicklungsumgebung bzw. Ihr Editor, zB
+		\texttt{\textbackslash{}TeX\{\}nicCenter}, \texttt{Atom} oder
+		\texttt{\textbackslash{}TeX\{\}works}
+	\\[3ex]
+	\textbackslash{}hsaddsupervisor\{Name2\}\{Telefon2\}\{Mail2\}
+		& Einen weiteren Betreuer mit vollem Namen, Telefonnnummer und E-Mail
+		hinzufügen
+\end{tabularx}\endgroup
+
+Wenn durch einzelne Optionen bestimme Ausgaben unterdrückt werden, so können die
+Daten dazu (etwa copyright-showpermanentcontact und \verb!\hspermanentcontact!)
+dennoch angegeben werden. So lässt sich bei Bedarf eine Option de-/aktivieren,
+ohne dass weitere Änderungen am Dokument nötig sind.
+
+\subsubsection{Sperrvermerk}
+Nachfolgende Befehle dienen der Erstellung eines Sperrvermerks:
+
+\par\begingroup\small\begin{tabularx}{\textwidth}{>{\ttfamily}lX}
+	\textbackslash{}hscompany\{Firma GerneGroß\}
+		& Name des Unternehmens mit Rechtsform
+	\\[3ex]
+	\textbackslash{}hsrestrictedchapters\{1, 2, 3, 5, 8, 12, Anhang B\}
+		& betroffene Kapitel hier benennen (zB 1,4,7,12), auch die Anhänge
+	\\[3ex]
+	\textbackslash{}hsfaculty\{Fachbereichelchen\}
+		& Fachbereich
+	\\[3ex]
+	\textbackslash{}hsrestrictionduration\{3\}
+		& Dauer der Sperre in Jahren
+\end{tabularx}\endgroup

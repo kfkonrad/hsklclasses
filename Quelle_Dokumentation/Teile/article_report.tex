@@ -1,0 +1,25 @@
+\section{\HSKLarticle und \HSKLreport}
+Die Klassen \HSKLarticle und \HSKLreport sind beide darauf angepasst,
+optional bis zu zwei Logos im Kopf jeder Seite einzufügen.
+
+Um das erste Logo einzufügen, wird im Befehl
+\verb!\hslogofile{pfad/zum/logo}! der Pfad zur Bilddatei des Logo übergeben.
+
+Um das zweite Logo einzufügen, gibt es den analogen Befehl\\
+\verb!\hssecondlogofile{pfad/zum/logo}!.
+
+Das erste Logo kann alleine verwendet werden, es erscheint oben links. Das
+zweite Logo wird oben rechts eingefügt. Damit das zweite Logo angezeigt wird,
+muss es ein erstes Logo geben. Wird nur ein zweites Logo spezifiziert, so wird
+kein Logo ausgegeben.
+
+Falls ein Logo eingebunden wird, gelten einige Besonderheiten:
+\begin{enumerate}
+	\item Das Paket \verb!scrlayer-scrpage! wird geladen. \textsc{Achtung:} Wenn
+	kein Logo eingebunden wird, steht die Funktionalität dieses Paketes nicht
+	automatisch zur Verfügung.
+	\item Weitere Anpassungen an den Kopf- und Fußzeilen müssen innerhalb eines\\ \verb!\AfterEndPreamble{!\dots\verb!}! Befehls vorgenommen werden.
+	\item Die Optionsliste der Dokumentenklasse muss um die Option
+	\verb!plainheadsepline=true! ergänzt werden, um einheitlich auf jeder Seite
+	die Trennlinie des Seitenkopfes zu erzeugen.
+\end{enumerate}

@@ -1,0 +1,22 @@
+%Glossareinträge jeder Art werden über \gls{<kuerzel>} referenziert.
+%Wenn auch die nicht referenzierten Einträge im Glossar bzw. in den
+%Symbol- & Abkuerzungsverzeichnissen erscheinen sollen, so muss der
+%Befehl \glsaddall nach dem Laden des Pakets (\usepackage{AbkSymGlo})
+%eingesetzt werden.
+
+%Befehle für Glossar
+\newglossaryentry{glos:Glossar}
+  {name=Glossar,
+	 description={Erläuterungen von Begriffen.}
+	}
+
+%Befehle für Symbole
+\newglossaryentry{symb:Pi}{
+name=$\pi$,
+description={Die Kreiszahl.},
+sort=symbolpi,         % danach wird sortiert
+type=symbolslist       % damit werden die Symbole vom Glossar getrennt
+}
+
+%Befehle für Abkürzungen
+\newacronym{acr:ZDF}{ZDF}{Zahlen, Daten, Fakten}
