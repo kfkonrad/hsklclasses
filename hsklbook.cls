@@ -1,6 +1,6 @@
 %Die folgenden Zeilen NICHT ÄNDERN (abgesehen vom Datum als Versionskontrolle)
 \NeedsTeXFormat{LaTeX2e}
-\def\hsversion{2.4}
+\def\hsversion{2.5a}
 \ProvidesClass{hsklbook}[2017/11/06 hsklbook v\hsversion - Eine Book-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrbook]
 
 %% Anmerkung des Autors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,7 +166,7 @@ toc                                    %Einträge im Inhaltsverzeichnis
 ]{glossaries}
 
 \newglossary[slg]                      %Ein eigenes Symbolverzeichnis erstellen
-{symbolslist}{syi}{syg}{Symbolverzeichnis}
+{symbolslist}{syi}{syg}{\translate{List of Symbols}}
 
 \makeglossaries %Glossar-Befehle anschalten
 
@@ -204,8 +204,8 @@ toc                                    %Einträge im Inhaltsverzeichnis
 \newcommand{\hsaddsupervisor}[3]
 {
   \rightadd\hsaddsupervisorvalue{%
-    \item[\arabic{supervisorcnt}\stepcounter{supervisorcnt}. Gutachter der Arbeit] #1 \newline%
-    Tel.: #2 \newline%
+    \item[\arabic{supervisorcnt}\stepcounter{supervisorcnt}. \translate{supervisor (secondary)}] #1 \newline%
+    \translate{Phone}: #2 \newline%
     Email: #3%
   }
 }
@@ -347,13 +347,13 @@ dass es sich um eine Funktionsbezeichnung oder Rolle handelt.
 %%%\author{\LARGE Name des Studierenden}
 %%%\date{\today}							% falls anderes, als das aktuelle gewünscht
 
-\publishers{Studiengang: \hsmajorvalue
+\publishers{\translate{Degree Course}: \hsmajorvalue
 				\iftitlepageSHOWmatriculation
-          \\Matrikelnummer: \hsmatriculationvalue
+          \\\translate{Matriculation}: \hsmatriculationvalue
         \fi
         \iftitlepageSHOWsupervisor
           \\\enlargethispage{3\baselineskip}\vfill\vfill\vfill\vfill
-          Betreuung: \hssupervisornamevalue
+          \translate{supervisor (short)}: \hssupervisornamevalue
         \fi
 }
 
@@ -368,7 +368,7 @@ dass es sich um eine Funktionsbezeichnung oder Rolle handelt.
   \scriptsize
   \begin{longtable}{llll}
     \toprule
-    Name & Matrikelnr. & Adresse & permanener Kontakt\\\midrule
+    \translate{Name} & \translate{Matric.} & \translate{Address} & \translate{Permanent Contact}\\\midrule
     \hsaddmultiauthorvalue
     \bottomrule
   \end{longtable}
@@ -397,17 +397,17 @@ dass es sich um eine Funktionsbezeichnung oder Rolle handelt.
 \lowertitleback{
 \footnotesize
 \begin{description}
-	\item[Betreuung der Arbeit] \hssupervisornamevalue \newline
-	Tel.: \hssupervisorphonevalue \newline
+	\item[\translate{supervisor (primary)}] \hssupervisornamevalue \newline
+	\translate{Phone}: \hssupervisorphonevalue \newline
 Email: \hssupervisormailvalue
 \hsaddsupervisorvalue
 \end{description}
 \vspace{-.3ex}
 
-Satz:\enskip Digitale Druckvorlage des Autors\\
-Satzsystem:\enskip \LaTeX{} -- KOMA-Script -- Distribution \hsdistributionvalue\\
-Umgebung:\enskip \hsworkenvironmentvalue\ -- Bibliografie Bib\LaTeX~\&~Biber\\
-Template f\"ur die Arbeit \HSKLbook K. Konrad \& M. W\"olker 2013--2017 -- Version \hsversion%
+\translate{Typesetting System}:\enskip \translate{setting copy}\\
+\translate{Automated Typsetting System}:\enskip \LaTeX{} -- KOMA-Script -- \translate{Distribution} \hsdistributionvalue\\
+\translate{Environment}:\enskip \hsworkenvironmentvalue\ -- \translate{Bibliography} Bib\LaTeX~\&~Biber\\
+\translate{Thesis Template}: \HSKLbook K. Konrad \& M. W\"olker 2013--2017 -- Version \hsversion%
 }
 
 \ifshortprelims
@@ -432,7 +432,7 @@ Template f\"ur die Arbeit \HSKLbook K. Konrad \& M. W\"olker 2013--2017 -- Versi
 
 \newcommand{\restrictionnote}
 {%
-\chapter*{Sperrvermerk}%
+\chapter*{\translate{Restriction Note}}%
 \par%
 Dieses Werk enth\"alt zum Teil Informationen technischer oder gesch\"aftlicher Art der \hscompanyvalue,
 die als geheimhaltungsbed\"urftig erkl\"art oder als solche erkennbar sind.
@@ -489,7 +489,7 @@ Dieser Sperrvermerk ist auf \hsrestrictiondurationvalue\ Jahre nach dem Pr\"ufun
 \fi
 
 \ifanytocs
-  \chapter{Verzeichnisse}
+  \chapter{\translate{Lists}}
 \fi
 
 \iflot
@@ -505,18 +505,18 @@ Dieser Sperrvermerk ist auf \hsrestrictiondurationvalue\ Jahre nach dem Pr\"ufun
 {
   \label{label:abk}    \printglossary[type=\acronymtype]      %Abkürzungen ausgeben
   \label{label:symbole}\printglossary[type=symbolslist,style=long]       %Symbole ausgeben
-  \label{label:glossar}\printglossary[style=altlist,title=Glossar]       %Glossar ausgeben
+  \label{label:glossar}\printglossary[style=altlist,title=\translate{Glossary}]       %Glossar ausgeben
 }
 
 \newcommand{\hs@printable@bibliography}
 {
 \ifsplitbib
-  \printbibheading[title={Quellen}]{}
-  Die im Dokument verwendeten Quellen werden getrennt nach Gedruckter Literatur und Quellen aus dem Internet unterschieden.\extravspace
+  \printbibheading[title={\translate{Resources}}]{}
+  \translate{splitresources}\extravspace
 
-  \addcontentsline{toc}{section}{Literatur}
+  \addcontentsline{toc}{section}{\translate{Literature}}
 
-  \printbibliography[notkeyword=Internet,heading=subbibliography,title={Literatur}]  % Gedruckte Quellen
+  \printbibliography[notkeyword=Internet,heading=subbibliography,title={\translate{Literature}}]  % Gedruckte Quellen
   \addcontentsline{toc}{section}{Internet}
   \printbibliography[   keyword=Internet,heading=subbibliography,title={Internet}]   % Quellen aus dem Internet
 \else

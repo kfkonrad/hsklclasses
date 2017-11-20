@@ -1,0 +1,29 @@
+\ProvidesDictionary{hskldictionary}{English}
+
+\providetranslation{List of Symbols}{List of Symbols}
+\providetranslation{supervisor (secondary)}{Supervisor}
+\providetranslation{Phone}{Phone}
+\providetranslation{Email}{Email}
+\providetranslation{Degree Course}{Degree Course}
+\providetranslation{Matriculation}{Matriculation}
+\providetranslation{supervisor (short)}{Supervisor}
+\providetranslation{Name}{Name}
+\providetranslation{Matric.}{Matric.}
+\providetranslation{Address}{Address}
+\providetranslation{Permanent Contact}{Permanent Contact}
+\providetranslation{supervisor (primary)}{Supervisor}
+\providetranslation{Restriction Note}{Restriction Note}
+\providetranslation{Lists}{Lists}
+\providetranslation{Glossary}{Glossary}
+\providetranslation{Resources}{Resources}
+\providetranslation{splitresources}{The resources used in this document are separated into printed literature and resources from the internet.}
+\providetranslation{Literature}{Literature}
+
+\providetranslation{Typesetting System}{Typesetting System}
+\providetranslation{setting copy}{The author's setting copy}
+\providetranslation{Automated Typsetting System}{Automated Typsetting System}
+\providetranslation{Distribution}{Distribution}
+\providetranslation{Environment}{Environment}
+\providetranslation{Bibliography}{Bibliography}
+\providetranslation{Thesis Template}{Thesis Template}
+\providetranslation{Version}{Version}

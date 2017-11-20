@@ -1,0 +1,29 @@
+\ProvidesDictionary{hskldictionary}{German}
+
+\providetranslation{List of Symbols}{Symbolverzeichnis}
+\providetranslation{supervisor (secondary)}{Gutachter der Arbeit}
+\providetranslation{Phone}{Tel.}
+\providetranslation{Email}{Email}
+\providetranslation{Degree Course}{Studiengang}
+\providetranslation{Matriculation}{Matrikelnummer}
+\providetranslation{supervisor (short)}{Betreuung}
+\providetranslation{Name}{Name}
+\providetranslation{Matric.}{Matrikelnr.}
+\providetranslation{Address}{Adresse}
+\providetranslation{Permanent Contact}{permanenter Kontakt}
+\providetranslation{supervisor (primary)}{Betreuung der Arbeit}
+\providetranslation{Restriction Note}{Sperrvermerk}
+\providetranslation{Lists}{Verzeichnisse}
+\providetranslation{Glossary}{Glossar}
+\providetranslation{Resources}{Quellen}
+\providetranslation{splitresources}{Die im Dokument verwendeten Quellen werden getrennt nach Gedruckter Literatur und Quellen aus dem Internet unterschieden.}
+\providetranslation{Literature}{Literatur}
+
+\providetranslation{Typesetting System}{Satz}
+\providetranslation{setting copy}{Digitale Druckvorlage des Autors}
+\providetranslation{Automated Typsetting System}{Satzsystem}
+\providetranslation{Distribution}{Distribution}
+\providetranslation{Environment}{Umgebung}
+\providetranslation{Bibliography}{Bibliografie}
+\providetranslation{Thesis Template}{Template f\"ur die Arbeit}
+\providetranslation{Version}{Version}
