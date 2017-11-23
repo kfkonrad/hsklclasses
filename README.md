@@ -11,10 +11,12 @@ noch um die Formatierung kümmern. Wenn ein Befehl unklar sein sollte, hilft im
 Zweifel ein Blick in die Doku.
 
 Damit das vollständige Beispiel ausführbar ist, müssen nach dem Download die
-Dateien `hsklbook.cls` und `hsklbase.sty` in den Ordner kopiert werden!
+Dateien `hsklbook.cls`, `hsklbase.sty`, `hskldictionary-English.dict` und
+`hskldictionary-German.dict` in den Ordner kopiert werden!
 
 ### Dokumentation
 Die Dokumentation listet Beschreibungen und Erklärungen aller neu eingeführten
 Befehle auf. Die Quelldaten finden sich im Ordner `Quelle_Dokumentation`. Um die
-Dokumentation zu kompilieren, müssen die Dateien `hsklarticle.cls` und
-`hsklbase.sty` in den Ordner kopiert werden.
+Dokumentation zu kompilieren, müssen die Dateien `hsklarticle.cls`,
+`hsklbase.sty`, `hskldictionary-English.dict` und `hskldictionary-German.dict`
+in den Ordner kopiert werden.
