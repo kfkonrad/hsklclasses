@@ -5,6 +5,7 @@
 \RequirePackage[ngerman]{translator}
 \usedictionary{hskldictionary}
 \RequirePackage{etoolbox}
+\RequirePackage{pdfpages}
 
 \AtEndPreamble
 {
@@ -105,7 +106,8 @@
 
 %%  Pakete für Fußnooten und Beschriftungen      %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{footnote}    % Ermöglicht Fußnoten in gleitenden Umgebungen
-\RequirePackage[font=footnotesize]{caption}  % Ermöglicht Beschriftungen beliebiger Objekte (eckige Klammern: Schriftgröße)
+\RequirePackage{caption}  % Ermöglicht Beschriftungen beliebiger Objekte (eckige Klammern: Schriftgröße)
+\renewcommand{\captionfont}{\footnotesize}
 \RequirePackage{subcaption}  % Beschriften von TeilBildern bzw. ~tallben
 \RequirePackage{chngcntr}
 \@ifclassloaded{hsklarticle}{}
