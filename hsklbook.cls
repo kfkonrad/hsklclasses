@@ -1,6 +1,6 @@
 %Die folgenden Zeilen NICHT ÄNDERN (abgesehen vom Datum als Versionskontrolle)
 \NeedsTeXFormat{LaTeX2e}
-\def\hsversion{2.5a}
+\def\hsversion{2.5b}
 \ProvidesClass{hsklbook}[2017/11/06 hsklbook v\hsversion - Eine Book-Klasse fuer die Hochschule Kaiserslautern, basierend auf scrbook]
 
 %% Anmerkung des Autors  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,6 +127,8 @@
 \hsbooloptionFalse{multiauthor}{SHOWmultiauthor}
 
 \hsbooloptionFalse{custombiblatex}{custombiblatex}
+
+\hsbooloptionFalse{smallereditionnotes}{smallereditionnotes}
 
 %Damit werden alle sonstigen Optionen direkt an scrbook durchgeschleift
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
@@ -305,6 +307,12 @@ Wenn nur die m\"annliche Form benutzt wird, bedeutet dies,
 dass es sich um eine Funktionsbezeichnung oder Rolle handelt.
 }
 
+\newcommand{\hsprintcountry}[1]{\def\hsprintcountryvalue{#1}}
+\hsprintcountry{Germany}
+
+\newcommand{\hsfurthereditionnotes}[1]{\def\hsfurthereditionnotesvalue{#1}}
+\let\hsfurthereditionnotesvalue\@empty
+
 \DeclareRobustCommand{\wiebefehl}[1]{\texttt{\textbackslash#1}}
 
 % Inititalwerte
@@ -386,7 +394,7 @@ dass es sich um eine Funktionsbezeichnung oder Rolle handelt.
 
 \small\hsplaceofstudyaddressvalue
 
-\small Printed in Germany
+\small Printed in \hsprintcountryvalue
 
 \extravspace
 
@@ -403,11 +411,17 @@ Email: \hssupervisormailvalue
 \hsaddsupervisorvalue
 \end{description}
 \vspace{-.3ex}
-
+\ifsmallereditionnotes
+  \scriptsize\extravspace
+\fi
 \translate{Typesetting System}:\enskip \translate{setting copy}\\
 \translate{Automated Typsetting System}:\enskip \LaTeX{} -- KOMA-Script -- \translate{Distribution} \hsdistributionvalue\\
 \translate{Environment}:\enskip \hsworkenvironmentvalue\ -- \translate{Bibliography} Bib\LaTeX~\&~Biber\\
 \translate{Thesis Template}: \HSKLbook K. Konrad \& M. W\"olker 2013--2017 -- Version \hsversion%
+\ifx\hsfurthereditionnotesvalue\@empty
+\else
+  \\[0.5ex] \hsfurthereditionnotesvalue
+\fi
 }
 
 \ifshortprelims
