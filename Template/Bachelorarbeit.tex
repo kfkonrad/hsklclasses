@@ -51,7 +51,7 @@ bibliography=totoc,
 \usepackage[T1]{fontenc}          % europaeische CM-Variante EC
 
 % hier muessen dann die .bib Datenbanken mit der Literatur rein.
-\bibliography{Literatur}
+\bibliography{literatur}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Daten fuer Titelei der Arbeit  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,16 +109,16 @@ bibliography=totoc,
 \begin{document}
 
 \hsfrontmatter
-\input{Ehrenwort}
+\input{Kapitel/Ehrenwort}
 \hsmainmatter
 
 % Hier muessen dann die eigenen Kapitel rein
-\input{Einleitung}
-\input{Methodik}
-\input{Fazit}
+\input{Kapitel/Einleitung}
+\input{Kapitel/Methodik}
+\input{Kapitel/Fazit}
 
 % Quellen, Index
 \hsbackmatter
-\input{Versicherung}
+\input{Kapitel/Versicherung}
 
 \end{document}

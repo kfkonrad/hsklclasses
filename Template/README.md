@@ -1,0 +1,1 @@
+Um dieses Template zu nutzen, müssen die Dateien `Makefile`, `hsklbook.cls`,`hsklbase.sty`, `hskldictionary-English.dict` und `hskldictionary-German.dict`  aus dem übergeordneten Ordner in diesen Ordner kopiert werden. Alternativ ist eine einsatzbereite Vorlage in jedem neuen Release enthalten.
