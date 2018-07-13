@@ -1,0 +1,17 @@
+**/.DS_Store
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.blg
+**/*.log
+**/*.out
+**/*.run.xml
+**/*.toc
+**/*.acn
+**/*.glo
+**/*.idx
+**/*.ist
+**/*.lot
+**/*.syg
+**/_minted-*
+**/_minted-*/**
