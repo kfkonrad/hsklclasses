@@ -15,6 +15,7 @@
 \providetranslation{Restriction Note}{Sperrvermerk}
 \providetranslation{Lists}{Verzeichnisse}
 \providetranslation{Glossary}{Glossar}
+\providetranslation{Acronyms}{Abk\"urzungen}
 \providetranslation{Resources}{Quellen}
 \providetranslation{splitresources}{Die im Dokument verwendeten Quellen werden getrennt nach Gedruckter Literatur und Quellen aus dem Internet unterschieden.}
 \providetranslation{Literature}{Literatur}

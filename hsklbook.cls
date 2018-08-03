@@ -517,7 +517,7 @@ Dieser Sperrvermerk ist auf \hsrestrictiondurationvalue\ Jahre nach dem Pr\"ufun
 
 \newcommand{\hs@printable@abbreviations}
 {
-  \label{label:abk}    \printglossary[type=\acronymtype]      %Abkürzungen ausgeben
+  \label{label:abk}    \printglossary[type=\acronymtype,title=\translate{Acronyms}]      %Abkürzungen ausgeben
   \label{label:symbole}\printglossary[type=symbolslist,style=long]       %Symbole ausgeben
   \label{label:glossar}\printglossary[style=altlist,title=\translate{Glossary}]       %Glossar ausgeben
 }
